@@ -1,0 +1,22 @@
+
+
+.posts {
+    display: flex;
+    justify-content: space-between;
+    /* flex: 1; */
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#root > div > div.app_page > div > div.recomendedvideo > div.recomendedvideo__body > div > a{
+    text-decoration: none;
+}
+#root > div > div.app_page > div > div.recomendedvideo > div.recomendedvideo__body > div > a > div > h4 {
+    
+        padding: 0;
+        margin: 16px 0 8px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #f6f6ff;
+        text-decoration: none;
+    }

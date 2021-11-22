@@ -1,0 +1,22 @@
+.footer {
+    background: repeating-linear-gradient(
+  -55deg,
+  #222,
+  #222 10px,
+  #333 10px,
+  #333 20px
+);
+    /* padding: 20px; */
+    margin-left: 74px;
+    margin-right: 90px;
+    margin-top:30px;
+    margin-bottom:30px;
+    
+    border: 1px solid wheat;
+    padding: 30px;
+    color: wheat;
+   
+}
+.footer>hr{
+    margin-bottom:20px;
+}

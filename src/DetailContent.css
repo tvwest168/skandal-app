@@ -1,0 +1,12 @@
+.detailContent{
+    font-size:30px;
+    display:flex;
+    align-items: center;
+    margin-top:40px;
+    
+}
+.sss{
+    flex:1;
+    margin-left:74px;
+    margin-right:90px;
+}
