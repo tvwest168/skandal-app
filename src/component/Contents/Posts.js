@@ -28,7 +28,7 @@ function Posts ({postsa,loading})  {
                key={posta.id}
                title={posta.title}
                message="10M views"
-               preview={posta.ipfs_link}
+               preview={`http://134.209.103.130:8080/ipfs/`+posta.ipfs_cid}
                muted={true}
                snapshotAtTime={150}
                light = {true}

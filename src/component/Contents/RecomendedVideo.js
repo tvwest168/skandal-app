@@ -49,7 +49,7 @@ function RecomendedVideo({title,category,token}){
             // code block
              configPosts = {
               method: 'GET',
-              url: 'http://localhost/skandal/public/api/list_movies_all?limit=24',
+              url: 'https://panel.studioskandal.com/api/list_movies_all?limit=24',
               headers: { 
                 'authorization': 'Bearer ' + token
               }
@@ -59,7 +59,7 @@ function RecomendedVideo({title,category,token}){
             // code block
              configPosts = {
               method: 'GET',
-              url: 'http://localhost/skandal/public/api/list_movies_all?limit=24&category='+category,
+              url: 'https://panel.studioskandal.com/api/list_movies_all?limit=24&category='+category,
               headers: { 
                 'authorization': 'Bearer ' + token
               }
@@ -70,7 +70,7 @@ function RecomendedVideo({title,category,token}){
             
              configPosts = {
               method: 'GET',
-              url: 'http://localhost/skandal/public/api/list_movies_all?limit=24&category='+category,
+              url: 'https://panel.studioskandal.com/api/list_movies_all?limit=24&category='+category,
               headers: { 
                 'authorization': 'Bearer ' + token
               }
