@@ -25,7 +25,7 @@ function RecomendedVideo({title,category,token}){
   
 
   useEffect(() => { 
-   // console.log(category);
+    console.log(category);
     const getListMoviesApi = async (token) =>{
      
       var configPosts = {};
@@ -42,6 +42,7 @@ function RecomendedVideo({title,category,token}){
       }
      
       console.log({typeCategory});
+     // console.log({})
         setLoading(true);
 
         switch({typeCategory}.typeCategory) {
@@ -49,9 +50,11 @@ function RecomendedVideo({title,category,token}){
             // code block
              configPosts = {
               method: 'GET',
-              url: 'https://panel.studioskandal.com/api/list_movies_all?limit=24',
-              headers: { 
-                'authorization': 'Bearer ' + token
+              url: 'https://panel.studioskandal.com/api/list_movies_all?limit=24'
+              ,headers: { 
+                'Authorization': 'Bearer ' + token,
+                'Access-Control-Allow-Origin' : '*',
+  'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
               }
             };
             break;
@@ -59,9 +62,11 @@ function RecomendedVideo({title,category,token}){
             // code block
              configPosts = {
               method: 'GET',
-              url: 'https://panel.studioskandal.com/api/list_movies_all?limit=24&category='+category,
-              headers: { 
-                'authorization': 'Bearer ' + token
+              url: 'https://panel.studioskandal.com/api/list_movies_all?limit=24&category='+category
+               ,headers: { 
+                'Authorization': 'Bearer ' + token,
+                'Access-Control-Allow-Origin' : '*',
+  'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'
               }
             };
             break;
@@ -71,8 +76,10 @@ function RecomendedVideo({title,category,token}){
              configPosts = {
               method: 'GET',
               url: 'https://panel.studioskandal.com/api/list_movies_all?limit=24&category='+category,
-              headers: { 
-                'authorization': 'Bearer ' + token
+               headers: { 
+                'Authorization': 'Bearer ' + token,
+                'Access-Control-Allow-Origin' : '*',
+  'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'
               }
             };
         }

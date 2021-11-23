@@ -1,4 +1,4 @@
-import  { useState /*, useEffect */ }  from 'react';
+import  { useState, useEffect }  from 'react';
 import './App.css';
 import './component/Header/Header';
 import Header from './component/Header/Header';
@@ -7,7 +7,7 @@ import BodyContent from './component/BodyContent';
 import DetailContent from './DetailContent';
 import Sidebar from './component/Contents/Sidebar';
 
-//import axios from 'axios';
+import axios from 'axios';
 
 //import { create } from 'ipfs-http-client';
 import {
@@ -22,28 +22,30 @@ import {
 function App() {
   
   const [token, setToken] = useState('');
-/*
+
   useEffect(() => { 
    
- 
+    const  fetchData = async () =>{
+            /* ==========  */
+            /* Take Token */
             
             var config = {
               method: 'POST',
               url: 'https://panel.studioskandal.com/api/get-token?secret=6d0789cf46516352919972874061947a'
             };
-            const res = await axios(config);
-            console.log(res);
-            setToken(res.data.data.access_token);         
+           const res = await axios(config);
+            //console.log(res);
+           setToken(res.data.data.access_token);         
 
     }  
-    fetchData();
+   // fetchData();
 
-
+    setToken('i91ks01ks');  
     
   }
   ,[]); 
-   */
-  setToken('i91ks01ks');     
+   
+ // setToken('i91ks01ks');     
   return (
     <div className="app">
       
@@ -85,7 +87,6 @@ function App() {
                     <DetailContent  token={token}  />
                 </Route>
                 <Route path="/">
-                      
                      <BodyContent  title="New Movies" token={token} />
                 </Route>
             </Switch>
