@@ -12,7 +12,7 @@ function  DetailContent (){
    return (
             <div className="detailContent" >
                         
-                        <ReactPlayer className="sss" controls="true" url={`http://134.209.103.130/ipfs/`+id} />
+                        <ReactPlayer className="sss" controls="true" url={`http://134.209.103.130:8080/ipfs/`+id} />
             </div>
         
     );
