@@ -31,7 +31,7 @@ function App() {
             
             var config = {
               method: 'POST',
-              url: 'http://localhost/skandal/public/api/get-token?secret=6d0789cf46516352919972874061947a'
+              url: 'https://panel.studioskandal.com/api/get-token?secret=6d0789cf46516352919972874061947a'
             };
             const res = await axios(config);
             setToken(res.data.data.access_token);         
