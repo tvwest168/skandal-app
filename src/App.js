@@ -26,7 +26,7 @@ function App() {
   useEffect(() => { 
    
     const  fetchData = async () =>{
-            /* ========== */
+            /* ==========  */
             /* Take Token */
             
             var config = {
@@ -34,6 +34,7 @@ function App() {
               url: 'https://panel.studioskandal.com/api/get-token?secret=6d0789cf46516352919972874061947a'
             };
             const res = await axios(config);
+            console.log(res);
             setToken(res.data.data.access_token);         
 
     }  
