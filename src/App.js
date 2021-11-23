@@ -1,4 +1,4 @@
-import  { useState, useEffect }  from 'react';
+import  { useState /*, useEffect */ }  from 'react';
 import './App.css';
 import './component/Header/Header';
 import Header from './component/Header/Header';
@@ -7,7 +7,7 @@ import BodyContent from './component/BodyContent';
 import DetailContent from './DetailContent';
 import Sidebar from './component/Contents/Sidebar';
 
-import axios from 'axios';
+//import axios from 'axios';
 
 //import { create } from 'ipfs-http-client';
 import {
@@ -22,12 +22,10 @@ import {
 function App() {
   
   const [token, setToken] = useState('');
-
+/*
   useEffect(() => { 
    
-    const  fetchData = async () =>{
-            /* ==========  */
-            /* Take Token */
+ 
             
             var config = {
               method: 'POST',
@@ -44,7 +42,8 @@ function App() {
     
   }
   ,[]); 
- 
+   */
+  setToken('i91ks01ks');     
   return (
     <div className="app">
       
