@@ -15,7 +15,7 @@ function RecomendedVideo({title,category,token}){
  
   
   const [currentPage,setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(24);
+  const [postsPerPage] = useState(12);
   
   const [typeCategory,setTypeCategory] = useState('main');
   
@@ -93,6 +93,7 @@ function RecomendedVideo({title,category,token}){
   const currentPosts = postsa.slice(indexOfFirstPost,indexOfLastPost);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  
   if(loading){
     
    // return  "<div className=\"recomendedvideo\"><div className=\"recomendedvideo__header\"><h2>loading</h2></div>";
