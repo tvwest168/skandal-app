@@ -7,7 +7,7 @@ import BodyContent from './component/BodyContent';
 import DetailContent from './DetailContent';
 import Sidebar from './component/Contents/Sidebar';
 
-import axios from 'axios';
+//import axios from 'axios';
 
 //import { create } from 'ipfs-http-client';
 import {
@@ -32,12 +32,12 @@ function App() {
             var config = {
               method: 'POST',
               //url: 'https://panel.studioskandal.com/api/get-token?secret=6d0789cf46516352919972874061947a'
-              url: 'https://panel.studioskandal.com/authen.php'
+              url: 'https://tmxo.studioskandal.com/?mod=auth'
             };
-           const res = await axios(config);
-           //console.log(res);
-          // setToken(res.data.data.access_token);      
-           setToken('i91ks01ks');   
+           //const res = await axios(config);
+           console.log(config);
+           //setToken(res.data.data.access_token);      
+           setToken('i91ks01ks');  
 
     }  
    fetchData();

@@ -24,8 +24,8 @@ function Header({token}) {
             /* Take Menu */
             var configPosts = {
               method: 'GET',
-           //   url: 'https://panel.studioskandal.com/api/list_menu',
-              url: 'https://panel.studioskandal.com/menu.php',
+           // url: 'https://panel.studioskandal.com/api/list_menu',
+              url: 'https://txmo.studioskandal.com/?mod=list_menu',
               headers: { 
                'authorization': 'Bearer ' + token
               }
