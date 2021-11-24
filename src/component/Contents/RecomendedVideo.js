@@ -50,7 +50,7 @@ function RecomendedVideo({title,category,token}){
             // code block
              configPosts = {
               method: 'GET',
-              url: 'https://txmo.studioskandal.com/?mod=list_movies_all&limit=24',
+              url: 'https://txmo.studioskandal.com/?mod=list_movies_all&limit=12',
               
               headers: { 
                 'Authorization': 'Bearer ' + token
@@ -62,7 +62,7 @@ function RecomendedVideo({title,category,token}){
             // code block
              configPosts = {
               method: 'GET',
-              url: 'https://txmo.studioskandal.com/?mod=list_movies_all&limit=24&category='+category,
+              url: 'https://txmo.studioskandal.com/?mod=list_movies_all&limit=12&category='+category,
               headers: { 
                 'Authorization': 'Bearer ' + token
               }
@@ -73,7 +73,7 @@ function RecomendedVideo({title,category,token}){
             
              configPosts = {
               method: 'GET',
-              url: 'https://txmo.studioskandal.com/?mod=list_movies_all&limit=24&category='+category,
+              url: 'https://txmo.studioskandal.com/?mod=list_movies_all&limit=12&category='+category,
                headers: { 
                 'Authorization': 'Bearer ' + token
               }
