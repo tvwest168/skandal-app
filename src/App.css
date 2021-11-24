@@ -2,7 +2,9 @@
     display: block;
 }
 .app{
-    min-width:1024px;
+    /*min-width:1024px;
+    max-width:1024px;
+    */
     font-family: 'Arial', sans-serif;
     letter-spacing: -.6px; 
     font-size:14px;
