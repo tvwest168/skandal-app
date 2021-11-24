@@ -31,16 +31,18 @@ function App() {
             
             var config = {
               method: 'POST',
-              url: 'https://panel.studioskandal.com/api/get-token?secret=6d0789cf46516352919972874061947a'
+              //url: 'https://panel.studioskandal.com/api/get-token?secret=6d0789cf46516352919972874061947a'
+              url: 'https://panel.studioskandal.com/authen.php'
             };
            const res = await axios(config);
-            //console.log(res);
-           setToken(res.data.data.access_token);         
+           //console.log(res);
+          // setToken(res.data.data.access_token);      
+           setToken('i91ks01ks');   
 
     }  
-   // fetchData();
+   fetchData();
 
-    setToken('i91ks01ks');  
+    //setToken('i91ks01ks');  
     
   }
   ,[]); 

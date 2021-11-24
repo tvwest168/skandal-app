@@ -50,8 +50,10 @@ function RecomendedVideo({title,category,token}){
             // code block
              configPosts = {
               method: 'GET',
-              url: 'https://panel.studioskandal.com/api/list_movies_all?limit=24'
-              ,headers: { 
+           //   url: 'https://panel.studioskandal.com/api/list_movies_all?limit=24',
+              url: 'https://panel.studioskandal.com/authen.php',
+              
+              headers: { 
                 'Authorization': 'Bearer ' + token,
                 'Access-Control-Allow-Origin' : '*',
   'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
@@ -62,8 +64,9 @@ function RecomendedVideo({title,category,token}){
             // code block
              configPosts = {
               method: 'GET',
-              url: 'https://panel.studioskandal.com/api/list_movies_all?limit=24&category='+category
-               ,headers: { 
+              //url: 'https://panel.studioskandal.com/api/list_movies_all?limit=24&category='+category,
+              url: 'https://panel.studioskandal.com/authen.php',
+              headers: { 
                 'Authorization': 'Bearer ' + token,
                 'Access-Control-Allow-Origin' : '*',
   'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'
@@ -75,7 +78,9 @@ function RecomendedVideo({title,category,token}){
             
              configPosts = {
               method: 'GET',
-              url: 'https://panel.studioskandal.com/api/list_movies_all?limit=24&category='+category,
+              url: 'https://panel.studioskandal.com/authen.php',
+              
+              //url: 'https://panel.studioskandal.com/api/list_movies_all?limit=24&category='+category,
                headers: { 
                 'Authorization': 'Bearer ' + token,
                 'Access-Control-Allow-Origin' : '*',
