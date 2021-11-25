@@ -75,13 +75,12 @@ function App() {
                 <Route path="/c/hentai">
                      <BodyContent title="Hentai" category="5" token={token}  />
                 </Route>
-               
-               
+
                 <Route path="/c/viral">
                     <BodyContent title="Viral"  category="6" token={token}  />
                 </Route>
                 <Route path="/s/:searchText">
-                    <BodyContent title="Search"   token={token}  />
+                    <BodyContent title="Search"  category="search" token={token}  />
                 </Route>
               
                 <Route path="/m/:id">

@@ -14,7 +14,8 @@ function Header({token}) {
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log('The name you entered was: {name}');
+        setName(document.getElementById('txtSearch').value);
+        window.location ="/#/s/"+name;
     }
 
     useEffect(() => {
@@ -48,8 +49,8 @@ function Header({token}) {
             </div>  
             <div className="header__input">
                 <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Search" value={name}   onChange={(e) => setName(e.target.value)} />
-                <NavLink  type="submit"  to='/'>
+                <input id="txtSearch"type="text" placeholder="Search" value={name}   onChange={(e) => setName(e.target.value)} />
+                <NavLink  type="submit"  to='/' onClick={handleSubmit} >
                 <SearchIcon type="submit" className="header__input_button" />
                 </NavLink  >
                </form>
