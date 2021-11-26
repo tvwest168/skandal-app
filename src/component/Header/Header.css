@@ -44,9 +44,14 @@
     margin-left: 20px;
     height:52px ;
     object-fit: contain;
-   
 
 }
+.header__logo1{
+    height:52px ;
+    object-fit: contain;
+
+}
+
 .header__input{
     display: flex;
     align-items: center;
@@ -121,4 +126,73 @@
     justify-content: space-between;
     flex-wrap: nowrap;
     flex-direction: row-reverse;
+}
+
+
+
+.css-4t3x6l-MuiPaper-root-MuiDrawer-paper {
+    background-color: #622c09 !important;
+    color: rgb(255 255 255 / 87%) !important;
+    -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    box-shadow: 0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12);
+    overflow-y: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    z-index: 1200;
+    -webkit-overflow-scrolling: touch;
+    position: fixed;
+    top: 0;
+    outline: 0;
+    left: 0;
+}
+
+.css-cveggr-MuiListItemIcon-root {
+    min-width: 56px;
+    color: rgb(110 76 76 / 66%) !important;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+.css-10hburv-MuiTypography-root {
+    margin: 0;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+    display: block;
+    text-transform: capitalize !important;
+}
+
+
+.header_drawer_kategory {
+    background-color: black;
+    padding: 30px;
+    color: white;
+    border-bottom: 10px solid #a3290a;
+    /* margin-bottom: 10px; */
+}
+.header_drawer_kategory_content{
+    background-color: #e77a11 !important;
+}
+
+.pop{
+    color:white;
+    text-decoration: none;
+    
 }

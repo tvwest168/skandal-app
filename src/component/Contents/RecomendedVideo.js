@@ -1,16 +1,13 @@
 import  { useState, useEffect  } from 'react';
 import axios from 'axios';
 import './RecomendedVideo.css';
-
-//import _ from "lodash";
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import Posts from './Posts';
-//import Pagination from './Pagination';
-///import Pagination from "react-js-pagination";
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
-//import { PostAdd } from '@material-ui/icons';
+import { useGlobalState} from 'state-pool';
 
+import {   useParams  } from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,46 +18,38 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function RecomendedVideo({title,category,token}){
-  //const [token,setToken] = useState('none');
+function RecomendedVideo({title,categoryMain,typeCategoryMain}){
   const classes = useStyles();
   const [postsa,setPosts] = useState([]);
   const [loading,setLoading] = useState(false);
-  //const [nodata,setNodata] = useState(false);
-  
-  
- 
-  
   const [currentPage,setCurrentPage] = useState(1);
   const [postsPerPage] = useState(12);
+  const [token] = useGlobalState('token');
+  const [category,setCategory] = useGlobalState('currentCategory');
+  const [typeCategory] = useGlobalState('CurrentTypeCategory');
+
+  const [currentSearchText] = useGlobalState('CurrentSearchText');
   
-  const [typeCategory,setTypeCategory] = useState('main');
-  
-  
-  
- 
- 
-  
+  const [currentTitle] = useGlobalState('CurrentTitle');
+  const {searchText} = useParams();
+  if (category !== categoryMain){
+   // setCategory(categoryMain);
+  }
+  else{
+    title = currentTitle;
+  }
+
+
 
   useEffect(() => { 
-    console.log(category);
-    const getListMoviesApi = async (token) =>{
+      
      
+
+      const getListMoviesApi = async (token) =>{
       var configPosts = {};
-      if (typeof category == 'undefined'){
-         setTypeCategory('main');
-      }
-      else if ( category === 'search' ){
-        setTypeCategory('search');
-      }
-      else
-      { 
-        setTypeCategory('category');
-      }
-     
       setLoading(true);
 
-      switch({typeCategory}.typeCategory) {
+      switch(typeCategory) {
           case 'main':
             // code block
              configPosts = {
@@ -78,16 +67,15 @@ function RecomendedVideo({title,category,token}){
             // code block
              configPosts = {
               method: 'GET',
-              url: 'https://txmo.studioskandal.com/?mod=list_movies_all&category='+category,
+              url: 'https://txmo.studioskandal.com/?mod=list_movies_all&title='+currentSearchText,
               headers: { 
                 'Authorization': 'Bearer ' + token
               }
             };
             setCurrentPage(1);
             break;
-          default:
+          case 'category':
             // code block
-            
              configPosts = {
               method: 'GET',
               url: 'https://txmo.studioskandal.com/?mod=list_movies_all&category='+category,
@@ -96,35 +84,39 @@ function RecomendedVideo({title,category,token}){
               }
             };
             setCurrentPage(1);
+            
+            break;
+            default:
+            
+
+            break;
         }
+
         /* Take Posts */
-        
         const resPosts = await axios(configPosts);
-       
         setPosts(resPosts.data.data);
         setTimeout(setLoading(false),50000);
+      
       }
       getListMoviesApi();
-  },[category,typeCategory,postsPerPage]);
+  },[category,typeCategory,token,currentTitle,categoryMain]);
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = postsa.slice(indexOfFirstPost,indexOfLastPost);
 
-  //const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
+  
   if(loading){
     
-   // return  "<div className=\"recomendedvideo\"><div className=\"recomendedvideo__header\"><h2>loading</h2></div>";
-    
+   
    return (
       
       <div className="recomendedvideo">
         
-          <div className="recomendedvideo__header">
+        <div className="recomendedvideo__header">
               <h1>
                  <div className="recomendedvideo__Title"> 
-                 <VideoLibraryIcon />    <span>{title}</span>
+                 <VideoLibraryIcon />    <span>{currentTitle}</span>
                  </div>
                  <div className="recomendedvideo__Label"> 
                      <span >ALL VIDEO  </span>
@@ -186,15 +178,11 @@ function RecomendedVideo({title,category,token}){
       );
   }
 
-  /*
-  function handlePageChange(page) {
-    console.log('active page is {pageNumber}');
-   
-    setCurrentPage(page);
-  } */
+ 
   
   const handleChange = (event, value) => {
     setCurrentPage(value);
+    //window.location="#/c/asian/"+value;
   };
   return (
       
@@ -234,18 +222,3 @@ function RecomendedVideo({title,category,token}){
 }
 export default RecomendedVideo;
 
-/*
-   <Pagination
-          activePage={currentPosts}
-          itemsCountPerPage={12}
-          totalItemsCount={450}
-          pageRangeDisplayed={5}
-          onChange={handlePageChange}
-        />
-<Pagination 
-            postsPerPage={postsPerPage}
-            totalPosts={postsa.length}
-            paginate={paginate}  
-            typeCategory={typeCategory} 
-                 />
-*/

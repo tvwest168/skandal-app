@@ -24,7 +24,7 @@ function Posts ({postsa,loading})  {
              /*  <li key={posta.id}>{posta.id} | {posta.title} | {posta.substitle} </li> */
                <NavLink  key={posta.id} to={`/m/${posta.ipfs_cid}`} >
 <VideoThumbnail
-               onClick="asdaas"
+             
                key={posta.id}
                title={posta.title}
                message={((posta.view <= 0)?"1040":posta.view)+" views"}

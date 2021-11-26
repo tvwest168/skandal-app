@@ -2,15 +2,13 @@ import React from 'react'
 import './DetailContent.css';
 import ReactPlayer from 'react-player/lazy';
 
-import {
-   
-    useParams
-  } from "react-router-dom";
+import {   useParams  } from "react-router-dom";
 
 
 
 function  DetailContent (){
    let {id} =  useParams();
+   
    return (
             <div className="detailContent" >
                         

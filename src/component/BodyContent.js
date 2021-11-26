@@ -1,13 +1,14 @@
 import React from 'react';
 import Sidebar from './Contents/Sidebar';
 import RecomendedVideo from './Contents/RecomendedVideo';
+
 import './BodyContent.css';
 
-function BodyContent({title,category,token}) {
+function BodyContent({title,typeCategoryMain,category}) {
     return (
         <div className="bodycontent">
             <Sidebar className="bodycontent_sidebar" />
-            <RecomendedVideo category={category} title={title} token={token} />
+            <RecomendedVideo categoryMain={category} typeCategoryMain={typeCategoryMain} title={title} />
         </div>
     )
 }
