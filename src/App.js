@@ -31,27 +31,27 @@ function App() {
   
   
   switch(window.location.href){
-    case 'http://localhost:3000/#/c/asian': 
+    case 'https://www.studioskandal.com/#/c/asian': 
       setCurrentTypeCategory('category');
       setCurrentTitle('asian');
     break;
-    case 'http://localhost:3000/#/c/barat':  
+    case 'https://www.studioskandal.com/#/c/barat':  
       setCurrentTypeCategory('category');
       setCurrentTitle('barat');
     break;
-    case 'http://localhost:3000/#/c/jepang':
+    case 'https://www.studioskandal.com/#/c/jepang':
       setCurrentTypeCategory('category');
       setCurrentTitle('jepang');
     break;
-    case 'http://localhost:3000/#/c/indonesia':
+    case 'https://www.studioskandal.com/#/c/indonesia':
       setCurrentTypeCategory('category');
       setCurrentTitle('indonesia');
     break;
-    case 'http://localhost:3000/#/c/hentai':
+    case 'https://www.studioskandal.com/#/c/hentai':
       setCurrentTypeCategory('category');
       setCurrentTitle('hentai');
     break;
-    case 'http://localhost:3000/#/c/viral':
+    case 'https://www.studioskandal.com/#/c/viral':
       setCurrentTypeCategory('category');
       setCurrentTitle('viral');
     break;
