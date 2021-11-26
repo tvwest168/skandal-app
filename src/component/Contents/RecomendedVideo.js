@@ -9,7 +9,7 @@ import Posts from './Posts';
 ///import Pagination from "react-js-pagination";
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
-import { PostAdd } from '@material-ui/icons';
+//import { PostAdd } from '@material-ui/icons';
 
 
 
@@ -26,7 +26,7 @@ function RecomendedVideo({title,category,token}){
   const classes = useStyles();
   const [postsa,setPosts] = useState([]);
   const [loading,setLoading] = useState(false);
-  const [nodata,setNodata] = useState(false);
+  //const [nodata,setNodata] = useState(false);
   
   
  
@@ -72,6 +72,7 @@ function RecomendedVideo({title,category,token}){
                
               }
             };
+            setCurrentPage(1);
             break;
           case 'search':
             // code block
@@ -82,6 +83,7 @@ function RecomendedVideo({title,category,token}){
                 'Authorization': 'Bearer ' + token
               }
             };
+            setCurrentPage(1);
             break;
           default:
             // code block
@@ -93,14 +95,12 @@ function RecomendedVideo({title,category,token}){
                 'Authorization': 'Bearer ' + token
               }
             };
+            setCurrentPage(1);
         }
         /* Take Posts */
         
         const resPosts = await axios(configPosts);
-        if (Object.keys(resPosts.data.data).length === 0 ){
-          setLoading(false);
-          setNodata(true);
-        }
+       
         setPosts(resPosts.data.data);
         setTimeout(setLoading(false),50000);
       }
@@ -111,7 +111,7 @@ function RecomendedVideo({title,category,token}){
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = postsa.slice(indexOfFirstPost,indexOfLastPost);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  //const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   if(loading){
     
@@ -159,7 +159,8 @@ function RecomendedVideo({title,category,token}){
       </div>
       );
   
-  }else if ( loading==='false' & nodata){
+  }
+  if ( postsa.length <= 0){
     
     return (  
       <div className="recomendedvideo">
@@ -185,12 +186,12 @@ function RecomendedVideo({title,category,token}){
       );
   }
 
-  
+  /*
   function handlePageChange(page) {
     console.log('active page is {pageNumber}');
    
     setCurrentPage(page);
-  }
+  } */
   
   const handleChange = (event, value) => {
     setCurrentPage(value);
@@ -215,9 +216,8 @@ function RecomendedVideo({title,category,token}){
         
        
           <div className={classes.root}>
-            <Pagination page={currentPosts} 
+            <Pagination 
             onChange={handleChange} 
-            
             shape="rounded" 
             count={Math.ceil(postsa.length /12)} 
             page={currentPage}

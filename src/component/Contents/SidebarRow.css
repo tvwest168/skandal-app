@@ -22,8 +22,16 @@
     padding:10px 20px;
     background-color: rgb(0, 0, 0);
 }
+#gradient-vertical {
+    --color-stop-1: #00c3ff;
+    --color-stop-2: #77e190;
+    --color-stop-3: #ffff1c;
+  }
 .sidebarRow:hover> .sidebarRow_icon{
     color:red;
+    
+    fill:url(#gradient-vertical) linear-gradient(
+        180deg, #eb197b, #ff0a33);
 }
 .sidebarRow:hover> .sidebarRow_title{
    /* font-weight:bold; */

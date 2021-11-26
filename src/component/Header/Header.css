@@ -75,9 +75,10 @@
     outline: none !important;
     border:none;
    /* box-shadow: 1px 1px 3px 3px #655017; */
-    box-shadow: inset 0px 0px 17px -4px wheat;
-   
-
+    
+}
+.header__input:hover{
+    box-shadow:  0px 0px 17px -4px wheat;
 }
 .header__input_button {
     width: 50px !important;

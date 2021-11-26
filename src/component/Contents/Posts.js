@@ -27,7 +27,7 @@ function Posts ({postsa,loading})  {
                onClick="asdaas"
                key={posta.id}
                title={posta.title}
-               message="10M views"
+               message={((posta.view <= 0)?"1040":posta.view)+" views"}
                preview={`https://play.studioskandal.com/ipfs/`+posta.ipfs_cid}
                muted={true}
                snapshotAtTime={150}
