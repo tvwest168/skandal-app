@@ -21,20 +21,23 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
 
-function Header({token}) {
+function Header() {
 
     const [CurrentTypeCategory,setCurrentTypeCategory] =useGlobalState("CurrentTypeCategory");
     const [currentSearchText,setCurrentSearchText] = useGlobalState("CurrentSearchText");
+    const [currentTitle,setCurrentTitle] = useGlobalState("CurrentTitle");
+    const [selectedIndex,setSelectedIndex] = useGlobalState("CurrentSelectedIndex");
+    
     const [postsa,setPosts] = useState([]);
     const [name, setName] = useState("");
 
     function handleSubmit(event) {
-        event.preventDefault();
-        setName(document.getElementById('txtSearch').value);
+       // event.preventDefault();
+     
         setCurrentSearchText(name);
         setCurrentTypeCategory("search");
-        window.location = '#/s/'+ name;
-      
+        setCurrentTitle("search");
+        setSelectedIndex(0);
     }
 
     function handleClickLogo(event){
@@ -73,7 +76,7 @@ function Header({token}) {
          <div className="header_drawer_kategory_content">
           <List>
             {['asian', 'barat', 'jepang', 'indonesia', 'hentai','viral'].map((text, index) => (
-               <a href={"#/c/"+text} className="pop" > 
+               <a key={text} href={"#/c/"+text} className="pop" > 
               <ListItem button key={text} onClick="handleNav" >
                 <ListItemIcon>
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -91,16 +94,17 @@ function Header({token}) {
 
     useEffect(() => {
    
-        const  fetchData = async (token) =>{
+        const  fetchData = async () =>{
         
             /* Take Menu */
             var configPosts = {
               method: 'GET',
             //url: 'https://panel.studioskandal.com/api/list_menu',
-              url: 'https://txmo.studioskandal.com/?mod=list_menu',
+                url: 'https://txmo.studioskandal.com/?mod=list_menu'
+                /*,
               headers: { 
                'authorization': 'Bearer ' + token
-              }
+              }*/
             };
             const resPosts = await axios(configPosts);
             setPosts(resPosts.data.data);

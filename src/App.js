@@ -7,12 +7,13 @@ import DetailContent from './DetailContent';
 import Sidebar from './component/Contents/Sidebar';
 import {store, useGlobalState} from 'state-pool';
 //import axios from 'axios';
+import  {  useEffect  } from 'react';
 import {
-  
   
   HashRouter,
   Switch,
-  Route
+  Route,
+ 
 } from "react-router-dom";
 
 
@@ -22,56 +23,96 @@ store.setState("CurrentTypeCategory", "main");
 store.setState("CurrentTitle", "LATEST MOVIES");
 store.setState("CurrentSearchText", "");
 store.setState("CurrentSelectedIndex", 0);
+store.setState("ListCategory", 
+[
+ 'asian',
+ 'barat',
+ 'jepang',
+ 'indonesia',
+ 'hentai',
+ 'viral'
+]
+);
+
 
 function App() {
   const [token] = useGlobalState("token");
   const [currentTypeCategory,setCurrentTypeCategory] = useGlobalState("CurrentTypeCategory");
   const [currentCategory,setCurrentCategory] = useGlobalState("currentCategory");
   const [currentTitle,setCurrentTitle] = useGlobalState("CurrentTitle");
+  const [listCategory,setListCategory] = useGlobalState("ListCategory");
   
-  
-  switch(window.location.href){
-    case 'https://www.studioskandal.com/#/c/asian': 
+
+  // const host = window.location.protocol + "//" + window.location.host;
+  const location = new URL(window.location.href);
+
+
+  if (location.hash.match('#/c/asian') != null){
+      console.log (location.hash.match('#/c/asian'));
       setCurrentTypeCategory('category');
+      setCurrentCategory('1');
       setCurrentTitle('asian');
-    break;
-    case 'https://www.studioskandal.com/#/c/barat':  
-      setCurrentTypeCategory('category');
-      setCurrentTitle('barat');
-    break;
-    case 'https://www.studioskandal.com/#/c/jepang':
-      setCurrentTypeCategory('category');
-      setCurrentTitle('jepang');
-    break;
-    case 'https://www.studioskandal.com/#/c/indonesia':
-      setCurrentTypeCategory('category');
-      setCurrentTitle('indonesia');
-    break;
-    case 'https://www.studioskandal.com/#/c/hentai':
-      setCurrentTypeCategory('category');
-      setCurrentTitle('hentai');
-    break;
-    case 'https://www.studioskandal.com/#/c/viral':
-      setCurrentTypeCategory('category');
-      setCurrentTitle('viral');
-    break;
   }
+
+  if (location.hash.match('#/c/barat') != null){
+      console.log (location.hash.match('#/c/asian'));
+      setCurrentTypeCategory('category');
+      setCurrentCategory('2');
+      setCurrentTitle('barat');
+  }
+  
+  if (location.hash.match('#/c/barat') != null){
+    console.log (location.hash.match('#/c/asian'));
+    setCurrentTypeCategory('category');
+    setCurrentCategory('2');
+    setCurrentTitle('barat');
+  }
+
+  if (location.hash.match('#/c/jepang') != null){
+    console.log (location.hash.match('#/c/jepang'));
+    setCurrentTypeCategory('category');
+    setCurrentCategory('3');
+    setCurrentTitle('jepang');
+  }
+
+  if (location.hash.match('#/c/indonesia') != null){
+    console.log (location.hash.match('#/c/indonesia'));
+    setCurrentTypeCategory('category');
+    setCurrentCategory('4');
+    setCurrentTitle('indonesia');
+  }
+  if (location.hash.match('#/c/hentai') != null){
+    console.log (location.hash.match('#/c/hentai'));
+    setCurrentTypeCategory('category');
+    setCurrentCategory('5');
+    setCurrentTitle('hentai');
+  }
+  if (location.hash.match('#/c/viral') != null){
+    console.log (location.hash.match('#/c/viral'));
+    setCurrentTypeCategory('category');
+    setCurrentCategory('6');
+    setCurrentTitle('viral');
+  }
+
+  if (location.hash.match('#/?search') != null){
+    console.log (location.hash.match('#/?search'));
+    setCurrentTypeCategory('search');
+    setCurrentTitle('search');
+  }
+
+
   
 
   return (
     <div className="app">
       
-       
   
        <HashRouter >
-       <Header token={token} />    
+       <Header />    
 
        <div className="app_page">
             <Switch>
-               
-               
-               
-                <Route path="/c/asian">
+               <Route path="/c/asian">
                       <BodyContent title="Asian"  category="1" typeCategoryMain="category" token={token} />
                 </Route>
                 <Route path="/c/barat">
@@ -91,32 +132,12 @@ function App() {
                 </Route>
                 
                 
-                <Route path="/c/asian/p/:id">
-                     <BodyContent title="Viral"     category="6" typeCategoryMain="category"  token={token} />
-                </Route>
-                <Route path="/c/barat/p/:id">
-                     <BodyContent title="Viral"     category="6" typeCategoryMain="category"  token={token} />
-                </Route>
-                <Route path="/c/jepang/p/:id">
-                     <BodyContent title="Viral"     category="6" typeCategoryMain="category"  token={token} />
-                </Route>
-                <Route path="/c/indonesia/p/:id">
-                     <BodyContent title="Viral"     category="6" typeCategoryMain="category"  token={token} />
-                </Route>
-                <Route path="/c/hentai/p/:id">
-                     <BodyContent title="Viral"     category="6" typeCategoryMain="category"  token={token} />
-                </Route>
-                <Route path="/c/viral/p/:id">
-                     <BodyContent title="Viral"     category="6" typeCategoryMain="category"  token={token} />
-                </Route>
-
+               
                 <Route path="/m/:id" >
                     <Sidebar token={token}  />
                     <DetailContent token={token} />
                 </Route>
-                <Route path="/s/:searchText" token={token}>
-                    <BodyContent title="Search"   category="s" typeCategoryMain="search"   />
-                </Route>
+                
                 <Route path="/">
                      <BodyContent  title="Latest Movies" category="m" typeCategoryMain="main" token={token} />
                 </Route>

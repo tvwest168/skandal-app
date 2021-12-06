@@ -5,6 +5,7 @@ import RecomendedVideo from './Contents/RecomendedVideo';
 import './BodyContent.css';
 
 function BodyContent({title,typeCategoryMain,category}) {
+    
     return (
         <div className="bodycontent">
             <Sidebar className="bodycontent_sidebar" />

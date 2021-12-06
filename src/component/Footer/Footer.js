@@ -4,11 +4,11 @@ function Footer() {
     return (
         
         <div className="footer">
-        <p> <h1>STUDIOSKANDAL</h1>  <h3>Kumpulan Skandal Viral Terbaik</h3></p>
-        <br/><p>
+        <div> <h2>STUDIOSKANDAL</h2>  <h3>Kumpulan Skandal Viral Terbaik</h3></div>
+        <div>
         Studioskandal is rated with RTA label. Parents, you can easily block access to this site. Please read this page for more informations.
 
-        </p>
+        </div>
 
         </div>
     )

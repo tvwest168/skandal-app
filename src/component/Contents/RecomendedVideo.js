@@ -6,6 +6,8 @@ import Posts from './Posts';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 import { useGlobalState} from 'state-pool';
+import AdsTop from './ads_top';
+import AdsBottom from './ads_bottom';
 
 import {   useParams  } from "react-router-dom";
 
@@ -27,13 +29,13 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
   const [token] = useGlobalState('token');
   const [category,setCategory] = useGlobalState('currentCategory');
   const [typeCategory] = useGlobalState('CurrentTypeCategory');
-
+  const [listCategory] = useGlobalState('ListCategory'); 
   const [currentSearchText] = useGlobalState('CurrentSearchText');
   
   const [currentTitle] = useGlobalState('CurrentTitle');
   const {searchText} = useParams();
   if (category !== categoryMain){
-   // setCategory(categoryMain);
+    setCategory(categoryMain);
   }
   else{
     title = currentTitle;
@@ -43,51 +45,65 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
 
   useEffect(() => { 
       
-     
-
+    
       const getListMoviesApi = async (token) =>{
       var configPosts = {};
+      const listCategory1 = listCategory;
+      const location = new URL(window.location.href);       
+      let page = 1;
       setLoading(true);
-
+      console.log(typeCategory);
       switch(typeCategory) {
           case 'main':
             // code block
              configPosts = {
               method: 'GET',
-              url: 'https://txmo.studioskandal.com/?mod=list_movies_all',
-              
-              headers: { 
-                'Authorization': 'Bearer ' + token
-               
-              }
+              url: 'https://txmo.studioskandal.com/?mod=list_movies_all'
             };
-            setCurrentPage(1);
+          
+             page = new  URLSearchParams(location.hash.replace('#/?','')).get('p');
+
+            if(page === null){
+               page = 1;
+            }
+            console.log(page);
+            setCurrentPage(parseInt(page));
+            
             break;
           case 'search':
             // code block
              configPosts = {
               method: 'GET',
-              url: 'https://txmo.studioskandal.com/?mod=list_movies_all&title='+currentSearchText,
-              headers: { 
-                'Authorization': 'Bearer ' + token
-              }
+              url: 'https://txmo.studioskandal.com/?mod=list_movies_all&title='+currentSearchText
             };
+            console.log(configPosts);
             setCurrentPage(1);
+            /*page = new  URLSearchParams(location.hash.replace('#/?','')).get('p');
+
+            if(page === null){
+               page = 1;
+            }
+            console.log(configPosts);
+            setCurrentPage(parseInt(page)); */
             break;
           case 'category':
             // code block
              configPosts = {
               method: 'GET',
-              url: 'https://txmo.studioskandal.com/?mod=list_movies_all&category='+category,
-               headers: { 
-                'Authorization': 'Bearer ' + token
-              }
+              url: 'https://txmo.studioskandal.com/?mod=list_movies_all&category='+category
             };
-            setCurrentPage(1);
+            //console.log('urlpage:'+location);
+             page = new  URLSearchParams(location.hash.replace('#/c/'+listCategory[category-1]+'?','')).get('p');
+
+            if(page === null){
+               page = 1;
+            }
+            console.log(page);
+            setCurrentPage(parseInt(page));
             
             break;
             default:
-            
+            console.log('default');
 
             break;
         }
@@ -112,7 +128,7 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
    return (
       
       <div className="recomendedvideo">
-        
+        <AdsTop />
         <div className="recomendedvideo__header">
               <h1>
                  <div className="recomendedvideo__Title"> 
@@ -124,10 +140,11 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
               </h1>
               <hr />
           </div>
+       
           <div className="recomendedvideo__body_loading">
           
-         
-          <div class="words word-1" >
+          
+          <div className="words word-1" >
             <span>L</span>
             <span>O</span>
             <span>A</span>
@@ -137,7 +154,7 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
             <span>G</span>
           </div>
 
-          <div class="words word-2">
+          <div className="words word-2">
             <span>M</span>
             <span>O</span>
             <span>V</span>
@@ -147,7 +164,7 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
           </div>
 
           </div>
-         
+          <AdsBottom />
       </div>
       );
   
@@ -156,11 +173,11 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
     
     return (  
       <div className="recomendedvideo">
-        
+          <AdsTop />
           <div className="recomendedvideo__header">
               <h1>
                  <div className="recomendedvideo__Title"> 
-                 <VideoLibraryIcon />    <span>{title}</span>
+                 <VideoLibraryIcon />    <span>{title} {currentSearchText}</span>
                  </div>
                  <div className="recomendedvideo__Label"> 
                      <span >ALL VIDEO  </span>
@@ -173,7 +190,7 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
           <span className="loading" >NO DATA</span>
 
           </div>
-         
+          <AdsBottom />
       </div>
       );
   }
@@ -182,16 +199,25 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
   
   const handleChange = (event, value) => {
     setCurrentPage(value);
-    //window.location="#/c/asian/"+value;
+    if (typeCategory=='main'){
+      window.location="#/?p="+value;  
+    }
+    if (typeCategory=='category'){
+      window.location="#/c/"+listCategory[category-1]+"?p="+value;
+    }
+    if (typeCategory=='search'){
+      window.location="#/s/?p="+value;
+    }
+    
   };
   return (
       
     <div className="recomendedvideo">
-      
+      <AdsTop />
         <div className="recomendedvideo__header">
             <h1>
                <div className="recomendedvideo__Title"> 
-               <VideoLibraryIcon />    <span>{title}</span>
+               <VideoLibraryIcon />    <span>{title} {currentSearchText}</span>
                </div>
                <div className="recomendedvideo__Label"> 
                    <span >ALL VIDEO  </span>
@@ -199,11 +225,15 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
             </h1>
             <hr />
         </div>
+        
         <div className="recomendedvideo__body">
           <Posts postsa={currentPosts} loading={loading} />
         
        
-          <div className={classes.root}>
+          
+        </div>
+        <div className="recomendedvideo_paging">
+        <div className={classes.root}>
             <Pagination 
             onChange={handleChange} 
             shape="rounded" 
@@ -214,9 +244,8 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
             showFirstButton showLastButton
              boundaryCount={2} color="secondary" />
           </div>
-        </div>
-        
-        
+          </div>
+        <AdsBottom />
     </div>
     );
 }

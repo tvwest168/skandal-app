@@ -1,0 +1,22 @@
+.recomendedvideo_bottom_ads{
+    display: flex;
+    padding:30px 30px 0px 0px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.bottom_ads_item{
+    flex:0.4;
+}
+
+.ads_right{
+    text-align:right;
+    padding-right:2px;
+}
+.ads_left{
+    text-align:left;
+    padding-left:2px;
+}
+.bottom_ads_item img{
+  width:100%;
+}

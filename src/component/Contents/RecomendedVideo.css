@@ -65,8 +65,7 @@
 }
 
 .recomendedvideo__header > h1>  .recomendedvideo__Title > span{
-   margin-left:16px;
-  
+   margin-left:28px;
    transform: scale(1.2, 1.2);
  }
  
@@ -246,4 +245,9 @@ li.page-item {
     line-height: 1.43;
     border-radius: 16px;
     letter-spacing: 0.01071em;
+}
+.recomendedvideo_paging{
+  display: flex;
+  justify-content: center;
+  align-items: center;;
 }

@@ -20,3 +20,7 @@
         color: #f6f6ff;
         text-decoration: none;
     }
+
+    .posts_navlink{
+        margin-bottom:10px !important;
+    }

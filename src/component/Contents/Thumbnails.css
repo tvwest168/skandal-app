@@ -1,5 +1,46 @@
+.thumbnails_con{
+    width:200px;
+    
+}
 .thumbnails{
-    display: flex;
-    padding:10px;
-    border:1px solid grey;
+  /*  display: flex; 
+    padding:10px;*/
+    border:1px solid rgba(110,109,108,.3803921568627451);
+    width:200px;
+    height:150px;
+    overflow: hidden;
+
+}
+.thumbnails>.react-thumbnail-generator>.img{
+ width:200px;
+ height:150px;
+ object-fit: contain;
+}
+.thumbnails>.react-thumbnail-generator>video{
+    width:200px;
+    height:150px;
+   
+   }
+
+#root > div > div.app_page > div > div.recomendedvideo > div.recomendedvideo__body > div.posts > a:nth-child(1) > div > div > img {
+    width:200px !important;
+    height:150px !important;
+}
+   
+.sssd{
+    width: 200px;
+    height: 150px;
+}
+
+.styles_badge__3dxZ6{
+    background-color: green;
+    color:white;
+}
+.thumbnails_bandage{
+    background:green;border-radius: 3px;color: white;font-size: 14px;padding-right: 5px;padding-left: 5px;font-family: sans-serif;position: relative;bottom: -128px;right: -165px;letter-spacing: -0.6px;transition-delay: 0.3s;
+}
+.styles_views__2l1fl{
+    color:#8f8e8eb0;
+    font-size:12px;
+    
 }

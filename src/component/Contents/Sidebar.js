@@ -13,13 +13,16 @@ function Sidebar() {
     const [currentTypeCategory,setCurrentTypeCategory] = useGlobalState("CurrentTypeCategory");
     const [currentTitle,setCurrentTitle] = useGlobalState("CurrentTitle");
     const [selectedIndex,setSelectedIndex] = useGlobalState("CurrentSelectedIndex");
+    const [currentSearchText,setCurrentSearchText] = useGlobalState("CurrentSearchText");
+ 
     
     
     function handleHomeClick(title,e){
         //e.preventDefault();
-        console.log('You clicked submit.'+ title + ",currentCategory:" +currentCategory + currentTitle +",currentTypeCategory:"+ currentTypeCategory);
+        //console.log('You clicked submit.'+ title + ",currentCategory:" +currentCategory + currentTitle +",currentTypeCategory:"+ currentTypeCategory);
         setCurrentTypeCategory('main');
         setCurrentTitle(title);
+        setCurrentSearchText("");
         setSelectedIndex(0);
     }
 
@@ -29,7 +32,8 @@ function Sidebar() {
         setCurrentCategory(category);
         setCurrentTitle(title);
         setSelectedIndex(category);
-        
+        setCurrentSearchText("");
+        //window.location.reload();
         //window.location = "/#/c/"+title;
     }
     return (
