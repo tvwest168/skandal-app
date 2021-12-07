@@ -52,7 +52,7 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
       const location = new URL(window.location.href);       
       let page = 1;
       setLoading(true);
-      console.log(typeCategory);
+      //console.log(typeCategory);
       switch(typeCategory) {
           case 'main':
             // code block
@@ -66,7 +66,7 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
             if(page === null){
                page = 1;
             }
-            console.log(page);
+            //console.log(page);
             setCurrentPage(parseInt(page));
             
             break;
@@ -76,7 +76,7 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
               method: 'GET',
               url: 'https://txmo.studioskandal.com/?mod=list_movies_all&title='+currentSearchText
             };
-            console.log(configPosts);
+            //console.log(configPosts);
             setCurrentPage(1);
             /*page = new  URLSearchParams(location.hash.replace('#/?','')).get('p');
 
@@ -98,12 +98,12 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
             if(page === null){
                page = 1;
             }
-            console.log(page);
+           // console.log(page);
             setCurrentPage(parseInt(page));
             
             break;
             default:
-            console.log('default');
+           // console.log('default');
 
             break;
         }

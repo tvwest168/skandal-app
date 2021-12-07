@@ -48,54 +48,54 @@ function App() {
 
 
   if (location.hash.match('#/c/asian') != null){
-      console.log (location.hash.match('#/c/asian'));
+    //  console.log (location.hash.match('#/c/asian'));
       setCurrentTypeCategory('category');
       setCurrentCategory('1');
       setCurrentTitle('asian');
   }
 
   if (location.hash.match('#/c/barat') != null){
-      console.log (location.hash.match('#/c/asian'));
+    //  console.log (location.hash.match('#/c/asian'));
       setCurrentTypeCategory('category');
       setCurrentCategory('2');
       setCurrentTitle('barat');
   }
   
   if (location.hash.match('#/c/barat') != null){
-    console.log (location.hash.match('#/c/asian'));
+    //console.log (location.hash.match('#/c/asian'));
     setCurrentTypeCategory('category');
     setCurrentCategory('2');
     setCurrentTitle('barat');
   }
 
   if (location.hash.match('#/c/jepang') != null){
-    console.log (location.hash.match('#/c/jepang'));
+    //console.log (location.hash.match('#/c/jepang'));
     setCurrentTypeCategory('category');
     setCurrentCategory('3');
     setCurrentTitle('jepang');
   }
 
   if (location.hash.match('#/c/indonesia') != null){
-    console.log (location.hash.match('#/c/indonesia'));
+   // console.log (location.hash.match('#/c/indonesia'));
     setCurrentTypeCategory('category');
     setCurrentCategory('4');
     setCurrentTitle('indonesia');
   }
   if (location.hash.match('#/c/hentai') != null){
-    console.log (location.hash.match('#/c/hentai'));
+   // console.log (location.hash.match('#/c/hentai'));
     setCurrentTypeCategory('category');
     setCurrentCategory('5');
     setCurrentTitle('hentai');
   }
   if (location.hash.match('#/c/viral') != null){
-    console.log (location.hash.match('#/c/viral'));
+    //console.log (location.hash.match('#/c/viral'));
     setCurrentTypeCategory('category');
     setCurrentCategory('6');
     setCurrentTitle('viral');
   }
 
   if (location.hash.match('#/?search') != null){
-    console.log (location.hash.match('#/?search'));
+    //console.log (location.hash.match('#/?search'));
     setCurrentTypeCategory('search');
     setCurrentTitle('search');
   }
