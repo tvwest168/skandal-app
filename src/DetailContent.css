@@ -10,3 +10,15 @@
     margin-left:74px;
     margin-right:90px;
 }
+.detail_typo {
+    flex: 0.8 1;
+    color: #bba9a9;
+    font-weight: 200 !important;
+    font-size: 30px !important;
+    background-color: #2a2929c2;
+    margin-top: 18px !important;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 30px;
+    padding: 10px;
+}
