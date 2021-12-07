@@ -33,7 +33,6 @@ function Header() {
 
     function handleSubmit(event) {
        // event.preventDefault();
-     
         setCurrentSearchText(name);
         setCurrentTypeCategory("search");
         setCurrentTitle("search");
