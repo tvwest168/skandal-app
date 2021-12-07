@@ -33,7 +33,7 @@ function Posts ({postsa,loading})  {
               thumb_title={posta.title}
               thumb_message={((posta.view <= 0)?"1040":posta.view)+" views"}
               
-              snaptime={8}
+              snaptime={((posta.snaptime <= 0)?"20":posta.snaptime)}
            
               badge="HD"
               badgeBg="green"
