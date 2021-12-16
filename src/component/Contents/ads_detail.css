@@ -10,6 +10,15 @@
     margin-right:5px;
 }
 
+.detail_item2{
+    text-align: center;
+
+}
+.detail_item2 img{
+    height:285px;
+    width: auto;
+    
+}
 .ads_right{
     text-align:right;
     padding-right:2px;
