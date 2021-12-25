@@ -44,3 +44,11 @@
     font-size:12px;
     
 }
+.thumb_con{
+    width:200px;height:180px;
+    text-align:center;
+}
+.thumb_img{
+    height:100%;
+    width:auto;
+}

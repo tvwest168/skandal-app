@@ -1,6 +1,6 @@
 import React from 'react';
 //import VideoThumbnail from "react-thumbnail-player";
-import Thumbnails from "./Thumbnails";
+import Thumbnails from "./Thumbnails2";
 import { NavLink } from 'react-router-dom';
 import './Posts.css';
 
@@ -22,24 +22,23 @@ function Posts ({postsa,loading})  {
     return (
         <div className="posts">
            {postsa.map(posta =>(
-           <NavLink  key={posta.id} to={`/m/${posta.ipfs_cid}`}   className="posts_navlink"  >     
-            
-             <Thumbnails 
+           
+            <NavLink  key={posta.id} to={`/m/${posta.ipfs_cid}`}   className="posts_navlink"  >  
+             <Thumbnails
               keyI={posta.id}
               title={posta.title}
               thumb_url={`https://play.studioskandal.com/ipfs/`+posta.ipfs_cid}
-
+              thumb_img={`https://play.studioskandal.com/ipfs/`+posta.ipfs_img_link}
+              
               thumb_width={200}
               thumb_title={posta.title}
               thumb_message={((posta.view <= 0)?"1040":posta.view)+" views"}
-              
               snaptime={((posta.snaptime <= 0)?"20":posta.snaptime)}
-           
               badge="HD"
               badgeBg="green"
-              className="customClassName" />
-             
-       </NavLink> 
+              className="customClassName" /> 
+            </NavLink> 
+
            ))}
 
         </div>
