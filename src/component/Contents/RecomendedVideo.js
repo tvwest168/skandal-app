@@ -58,7 +58,7 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
             // code block
              configPosts = {
               method: 'GET',
-              url: 'https://txmo.studioskandal.com/?mod=list_movies_all&limit=100'
+              url: 'https://txmo.studioskandal.com/?mod=list_movies_all'
             };
           
              page = new  URLSearchParams(location.hash.replace('#/?','')).get('p');
