@@ -48,7 +48,7 @@ function  DetailContent (){
 
    return (
             <>
-            <AdsTop />
+            <AdsDetail />
             <div style={{'display':'flex','flex-direction': 'row',
     'justify-content': 'center',
     'align-items': 'center',
@@ -62,7 +62,8 @@ function  DetailContent (){
                         <ReactPlayer className="sss" controls="false" url={`https://play.studioskandal.com/ipfs/`+id} />
                         
             </div>
-            <AdsDetail />
+            <AdsTop />
+            
             </>
     );
 }

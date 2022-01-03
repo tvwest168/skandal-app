@@ -4,8 +4,8 @@ import './ads_detail.css';
 function ads_detail() {
     return (
         <div className="recomendedvideo_detail_ads">
-        <div className="detail_ads_item " key="1"><a href="https://157.230.195.128/?ref=studios" rel="noreferrer" target="_blank"><img alt="skandal1" src="https://play.studioskandal.com/ipfs/QmVauTezAH5aW5bhRPSb353typ4yp3wUfjsgan3UsgTpZD"></img></a></div>
-         <div className="detail_ads_item detail_item2"  key="2"><a href="http://216.83.47.53/?ref=275BE8" rel="noreferrer" target="_blank"><img alt="skandal2" src="https://play.studioskandal.com/ipfs/QmQqN1TiDq5NJchvXtcxrdhgFPxhB2TVibdnrwbfx8Jvce"></img></a></div>
+        <div className="detail_ads_item " key="1"><a href="http://180.215.200.120/?ref=studioskandal" rel="noreferrer" target="_blank"><img alt="jendralpoker" src="https://play.studioskandal.com/ipfs/QmPYAos9k3bMfG8yYv4STxtYDLtzYLHyuUddre6n8TUqio"></img></a></div>
+         <div className="detail_ads_item "  key="2"><a href="http://50.28.102.195/register.php?ref=FD1B18D28E" rel="noreferrer" target="_blank"><img alt="mkv" src="https://play.studioskandal.com/ipfs/QmPB4YLXmJ2zNm2ahLyT4yqvb3yxnGmhMQ66JYWw6Se4w1"></img></a></div>
       </div>
     )
 }
