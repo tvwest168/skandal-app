@@ -75,7 +75,7 @@ if (get_cookie('popunder')==''){
     }
 })
 
- var now = new Date();
+ var now = new Date(); 
  var time = now.getTime();
  var expireTime = time + 25*36000;
  now.setTime(expireTime);
