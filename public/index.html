@@ -15,11 +15,12 @@
    
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     
-    <title>Studio Skandal - Skandal Video Indonesia Terbaik</title>
+    <title>Studio Skandal - Skandal Video Indonesia Terbaik</title>	
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+   
    
       <!-- Histats.com  START  (aync)-->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
@@ -35,87 +36,6 @@
   <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4546176&101" alt="free stats" border="0"></a></noscript>
   <!-- Histats.com  END  -->
 
-
-  <script>
-
-//Pop-under window- By JavaScript Kit
-//Credit notice must stay intact for use
-//Visit http://javascriptkit.com for this script
-
-//specify page to pop-under
-function random_item(items)
-{
-  
-return items[Math.floor(Math.random()*items.length)];
-     
-}
-
-var items = ["https://bintangbola.digital/?ref=studios", 
-"http://180.215.200.120/?ref=studioskandal", 
-"http://50.28.102.195/register.php?ref=FD1B18D28E", 
-"http://216.83.47.53/?ref=275BE8"];
-
-var currentPage = window.location.href;
-
-var popunder= random_item(items);
-
-//specify popunder window features
-//set 1 to enable a particular feature, 0 to disable
-var winfeatures="width=800,height=510,scrollbars=1,resizable=1,toolbar=1,location=1,menubar=1,status=1,directories=0"
-
-//Pop-under only once per browser session? (0=no, 1=yes)
-//Specifying 0 will cause popunder to load every time page is loaded
-var once_per_session=1
-
-///No editing beyond here required/////
-
-function get_cookie(Name) {
-  var search = Name + "="
-  var returnvalue = "";
-  if (document.cookie.length > 0) {
-    offset = document.cookie.indexOf(search)
-    if (offset != -1) { // if cookie exists
-      offset += search.length
-      // set index of beginning of value
-      end = document.cookie.indexOf(";", offset);
-      // set index of end of cookie value
-      if (end == -1)
-         end = document.cookie.length;
-      returnvalue=unescape(document.cookie.substring(offset, end))
-      }
-   }
-  return returnvalue;
-}
-function loadpopunder(){
-win2=window.open(window.location.href,"",winfeatures)
-win2.blur()
-window.location.href = popunder;
-
-window.focus()
-}
-function loadornot(){
-if (get_cookie('popunder')==''){
-
-anchors = document.getElementsByTagName("a");
-
-for (var i = 0; i < anchors.length; i++) {   
-
- anchors[i].onclick = function(e){
- e.preventDefault();
- loadpopunder();
-}
-}
-document.cookie="popunder=yes"
-}
-}
-
-
-
-if (once_per_session==0)
-loadpopunder()
-else
-loadornot()
-
-</script> 	
+  <script src="popup.js"  ></script>
   </body>
 </html>

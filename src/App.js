@@ -100,7 +100,10 @@ function App() {
     setCurrentTitle('search');
   }
 
-
+  useEffect(() => { 
+    
+    console.log('');
+  },[]);
   
 
   return (

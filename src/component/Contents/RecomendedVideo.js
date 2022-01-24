@@ -113,6 +113,8 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
         setPosts(resPosts.data.data);
         setTimeout(setLoading(false),50000);
       
+        
+      
       }
       getListMoviesApi();
   },[category,typeCategory,token,currentTitle,categoryMain]);

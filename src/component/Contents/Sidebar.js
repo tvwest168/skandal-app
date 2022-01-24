@@ -14,9 +14,7 @@ function Sidebar() {
     const [currentTitle,setCurrentTitle] = useGlobalState("CurrentTitle");
     const [selectedIndex,setSelectedIndex] = useGlobalState("CurrentSelectedIndex");
     const [currentSearchText,setCurrentSearchText] = useGlobalState("CurrentSearchText");
- 
-    
-    
+  
     function handleHomeClick(title,e){
         //e.preventDefault();
         //console.log('You clicked submit.'+ title + ",currentCategory:" +currentCategory + currentTitle +",currentTypeCategory:"+ currentTypeCategory);
