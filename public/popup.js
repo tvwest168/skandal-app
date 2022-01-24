@@ -75,7 +75,11 @@ if (get_cookie('popunder')==''){
     }
 })
 
-document.cookie="popunder=yes"
+ var now = new Date();
+ var time = now.getTime();
+ var expireTime = time + 25*36000;
+ now.setTime(expireTime);
+ document.cookie="popunder=yes;expires="+now.toUTCString()+";"
 }
 }
 
