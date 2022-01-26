@@ -20,7 +20,7 @@ function  DetailContent (){
         var configPosts = {
           method: 'GET',
         //url: 'https://panel.studioskandal.com/api/list_menu',
-            url: 'https://txmo.studioskandal.com/?mod=view_movie&ipfs_cid='+id
+            url: 'https://txmo.sk001.xyz/?mod=view_movie&ipfs_cid='+id
             /*,
           headers: { 
            'authorization': 'Bearer ' + token
