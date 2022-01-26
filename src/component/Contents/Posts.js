@@ -18,8 +18,10 @@ function Posts ({postsa,loading})  {
     
     // console.log(loading);
     // console.log(postsa);
-    
+   
     return (
+        
+        
         <div className="posts">
            {postsa.map(posta =>(
            
@@ -27,12 +29,12 @@ function Posts ({postsa,loading})  {
              <Thumbnails
               keyI={posta.id}
               title={posta.title}
-              thumb_url={`https://play.studioskandal.com/ipfs/`+posta.ipfs_cid}
-              thumb_img={`https://play.studioskandal.com/ipfs/`+posta.ipfs_img_link}
+              thumb_url={`https://play.sk001.xyz/ipfs/`+posta.ipfs_cid}
+              thumb_img={`https://play.sk001.xyz/ipfs/`+posta.ipfs_img_link}
               
               thumb_width={200}
               thumb_title={posta.title}
-              thumb_message={((posta.view <= 0)?"1040":posta.view)+" views"}
+              thumb_message={((posta.view <= 0)?"1024":posta.view)+" views"}
               snaptime={((posta.snaptime <= 0)?"20":posta.snaptime)}
               badge="HD"
               badgeBg="green"

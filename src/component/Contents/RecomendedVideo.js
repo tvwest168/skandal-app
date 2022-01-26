@@ -58,7 +58,7 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
             // code block
              configPosts = {
               method: 'GET',
-              url: 'https://txmo.studioskandal.com/?mod=list_movies_all'
+              url: 'https://txmo.sk001.xyz/?mod=list_movies_all'
             };
           
              page = new  URLSearchParams(location.hash.replace('#/?','')).get('p');
@@ -74,7 +74,7 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
             // code block
              configPosts = {
               method: 'GET',
-              url: 'https://txmo.studioskandal.com/?mod=list_movies_all&title='+currentSearchText
+              url: 'https://txmo.sk001.xyz/?mod=list_movies_all&title='+currentSearchText
             };
             //console.log(configPosts);
             setCurrentPage(1);
@@ -90,7 +90,7 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
             // code block
              configPosts = {
               method: 'GET',
-              url: 'https://txmo.studioskandal.com/?mod=list_movies_all&category='+category
+              url: 'https://txmo.sk001.xyz/?mod=list_movies_all&category='+category
             };
             //console.log('urlpage:'+location);
              page = new  URLSearchParams(location.hash.replace('#/c/'+listCategory[category-1]+'?','')).get('p');
@@ -112,8 +112,6 @@ function RecomendedVideo({title,categoryMain,typeCategoryMain}){
         const resPosts = await axios(configPosts);
         setPosts(resPosts.data.data);
         setTimeout(setLoading(false),50000);
-      
-        
       
       }
       getListMoviesApi();
