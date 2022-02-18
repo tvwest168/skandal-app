@@ -59,7 +59,7 @@ function  DetailContent (){
             </div>
             <div className="detailContent" >
                         
-                        <ReactPlayer className="sss" controls="false" url={`https://play.sk001.xyz/ipfs/`+id} />
+                        <ReactPlayer className="sss" controls="false" url={`https://128.199.250.161/ipfs/`+id} />
                         
             </div>
             <AdsTop />
