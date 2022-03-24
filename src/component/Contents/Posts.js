@@ -29,8 +29,8 @@ function Posts ({postsa,loading})  {
              <Thumbnails
               keyI={posta.id}
               title={posta.title}
-              thumb_url={`https://play.sk001.xyz/ipfs/`+posta.ipfs_cid}
-              thumb_img={`https://play.sk001.xyz/ipfs/`+posta.ipfs_img_link}
+              thumb_url={`http://100.26.60.62/ipfs/`+posta.ipfs_cid}
+              thumb_img={`http://100.26.60.62/ipfs/`+posta.ipfs_img_link}
               
               thumb_width={200}
               thumb_title={posta.title}
