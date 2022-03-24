@@ -59,7 +59,7 @@ function  DetailContent (){
             </div>
             <div className="detailContent" >
                         
-                        <ReactPlayer className="sss" controls="false" url={`http://100.26.60.62/ipfs/`+id} />
+                        <ReactPlayer config={{ file: { attributes: { controlsList: 'nodownload' } } }} className="sss" controls="false" url={`http://100.26.60.62/ipfs/`+id} />
                         
             </div>
             <AdsTop />
