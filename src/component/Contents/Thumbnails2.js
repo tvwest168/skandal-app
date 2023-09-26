@@ -9,7 +9,7 @@ function Thumbnails2({keyI,thumb_url,thumb_img,thumb_title,thumb_message,thumb_w
        <div className="thumbnails"><span className="thumbnails_bandage">HD</span>
       
           <div className="thumb_con">
-             <img src={thumb_img} className="thumb_img" />  
+             <img alt={thumb_title} src={thumb_img} className="thumb_img" />  
           </div>
 
         </div>
