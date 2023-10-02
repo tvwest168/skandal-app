@@ -10,4 +10,4 @@ function ads_top() {
     )
 }
 
-export default ads_top
+export default ads_top 
