@@ -14,9 +14,9 @@ return items[Math.floor(Math.random()*items.length)];
 }
 
 var items = ["https://bintangbola.digital/?ref=studios", 
-"http://180.215.200.120/?ref=studioskandal", 
-"http://50.28.102.195/register.php?ref=FD1B18D28E", 
-"http://216.83.47.53/?ref=275BE8"];
+"https://jendralpoker.store/?ref=studioskandal", 
+"https://mkvgames88.info/register?ref=FD1B18D28E", 
+"https://indowins.ink/?ref=275BE8"];
 
 var currentPage = window.location.href;
 
