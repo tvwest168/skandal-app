@@ -13,7 +13,7 @@ return items[Math.floor(Math.random()*items.length)];
      
 }
 
-var items = ["https://bintangbola.digital/?ref=studios", 
+var items = ["https://bb168.games/?ref=studios", 
 "https://jp888.store/?ref=studioskandal", 
 "https://mkvgames88.info/register?ref=FD1B18D28E", 
 "https://iw888.store/?ref=275BE8"];
