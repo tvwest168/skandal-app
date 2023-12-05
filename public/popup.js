@@ -16,7 +16,7 @@ return items[Math.floor(Math.random()*items.length)];
 var items = ["https://bb168.cloud/?ref=studios", 
 "https://jp888.store/?ref=studioskandal", 
 "https://mkvgames88.info/register?ref=FD1B18D28E", 
-"https://iw888.live/?ref=275BE8"];
+"https://iw888.cloud/?ref=275BE8"];
 
 var currentPage = window.location.href;
 
