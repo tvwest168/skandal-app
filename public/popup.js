@@ -13,10 +13,10 @@ return items[Math.floor(Math.random()*items.length)];
      
 }
 
-var items = ["https://bb168.cloud/?ref=studios", 
-"https://jp888.store/?ref=studioskandal", 
-"https://mkvgames88.info/register?ref=FD1B18D28E", 
-"https://iw888.cloud/?ref=275BE8"];
+var items = ["https://heylink.me/bintangbola303/", 
+"https://heylink.me/jendralpoker303", 
+"https://heylink.me//mkvgames303", 
+"https://heylink.me/indowins303"];
 
 var currentPage = window.location.href;
 
